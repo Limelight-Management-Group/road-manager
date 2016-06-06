@@ -17,15 +17,17 @@ ActiveRecord::Schema.define(version: 20160605231546) do
   enable_extension "plpgsql"
 
   create_table "venues", force: :cascade do |t|
-    t.text    "name",                                             null: false
-    t.text    "venue_name",                                       null: false
-    t.text    "location",                                         null: false
-    t.text    "days_available"
-    t.boolean "age_restriction",                  default: false
-    t.text    "genre"
-    t.boolean "registration_required",            default: false
-    t.string  "website",               limit: 50
-    t.text    "special_instructions"
+    t.string   "name"
+    t.text     "venue_name"
+    t.text     "location"
+    t.text     "days_available"
+    t.boolean  "age_restriction"
+    t.text     "genre"
+    t.boolean  "registration_required"
+    t.string   "website"
+    t.string   "special_instructions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

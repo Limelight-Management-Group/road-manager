@@ -3,11 +3,11 @@ class Road_manager < Sinatra::Base
 
     # GET "/" - This is the root route
     get "/" do
-        @venue = Venue.all
-        p "Venues from controller: "
-        p @venues
-        p "****"
-        erb :index
+      @venues = Venue.all
+      p "All venues"
+      p @venues
+      p "****"
+      erb :index
     end
 
     # GET "/venues" - Gets all the venues I have
