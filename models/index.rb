@@ -1,4 +1,4 @@
-get '/' do
-  erb :index
+class Venue < ActiveRecord::Base
+
 end
 

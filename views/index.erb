@@ -1,10 +1,14 @@
-<div class="container">
-
-  <% if @venues %>
-    <h1>Road Manger</h1>
-    <p>Take your show on the road <% @venues %></p>
-  <% end %>
 
 
+<ul>
+<% @venues.each do | venue | %>
+  <li>
+    <p><strong>"<%= venue.name %>",
+    by <%= venue.event_name %></strong>,
+    <%= venue.genre %>,
+    <%= venue.location %></p>
+  </li>
+<% end %>
+</ul>
 
 
