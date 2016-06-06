@@ -7,8 +7,9 @@ class Road_manager < Sinatra::Base
     end
 
     # GET "/venues" - Gets all the venues I have
-    get "/venues" do
-
+    get "/venues/new" do
+      # @venues = Venue.new
+        erb :'new'
     end
 
     # POST "/venues" - Create a new venue, and adds it to my list
@@ -29,6 +30,7 @@ class Road_manager < Sinatra::Base
 
     # EDIT - like NEW, this just gives us a form that will PUT/PATCH our changes
     # GET "/venues/3" - Just get the information associated with book 3
+
     get "/venues/:id/edit" do
         # some code will go here
     end
@@ -55,145 +57,7 @@ end
 
 __END__
 @@layout
-            <!-- Form Name -->
-            <legend>Add New Artist</legend>
 
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="name">Name</label>
-              <div class="col-md-4">
-              <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
-
-              </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="eventName">Event Name</label>
-              <div class="col-md-4">
-              <input id="textinput" name="eventName" type="text" placeholder="" class="form-control input-md">
-
-              </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="Location">Location</label>
-              <div class="col-md-4">
-              <input id="Location" name="Location" type="text" placeholder="City, State, Country " class="form-control input-md">
-
-              </div>
-            </div>
-
-            <!-- Textarea -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="age">Age</label>
-              <div class="col-md-4">
-                <textarea class="form-control" id="age" name="age">Enter numerical value</textarea>
-              </div>
-            </div>
-
-            <!-- Textarea -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="genres">Genres (separated by commas)</label>
-              <div class="col-md-4">
-                <textarea class="form-control" id="genres" name="genres">rock, pop</textarea>
-              </div>
-            </div>
-
-
-            <!-- Button -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="singlebutton">Save artist</label>
-              <div class="col-md-4">
-                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
-              </div>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-      </div>
-    </section>
-
-    <section class="container">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h2>Artists</h2>
-        </div>
-      </div>
-      <!-- artists! -->
-      <div id='artists'>
-
-
-
-
-          <!-- one artist -->
-          <div class="row artist">
-
-            <div class="col-md-10 col-md-offset-1">
-              <div class="panel panel-default">
-                <div class="panel-body">
-
-
-
-
-
-                  <div class='panel-footer'>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end one artist -->
-
-
-
-
-      </div>
-    </section>
-
-    <!-- begin songModal: this is not visible until you call .modal() on it -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="songModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Create Profile</h4>
-          </div>
-          <div class="modal-body">
-            <fieldset class='form-horizontal'>
-
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="projectName">Project Name</label>
-              <div class="col-md-4">
-              <input id="projectName" name="projectName" type="text" placeholder="" class="form-control input-md" required="">
-
-              </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="trackNumber">Track Number</label>
-              <div class="col-md-4">
-              <input id="trackNumber" name="trackNumber" type="text" placeholder="" class="form-control input-md">
-
-              </div>
-            </div>
-
-            </fieldset>
-
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="saveSong">Save changes</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-</div>
 
 
 
