@@ -1,0 +1,26 @@
+<h2>
+<%= @venue.name %>
+<%= @venue.venue_name %>
+<%= @venue.location %>
+<%= @venue.days_available %>
+<%= @venue.age_restriction %>
+<%= @venue.genre %>
+<%= @venue.registration_required %>
+<%= @venue.website %>
+<%= @venue.special_instructions %>
+</h2>
+
+
+<form action="/venues/<%= @venue.id %>" method="post">
+  <input type="hidden" name="_method" value="DELETE"/>
+  <input type="submit" value="Delete"/>
+</form>
+
+
+<form action="/venues/<%= @venue.id %>" method="get">
+  <input type="hidden" name="_method" value="get"/>
+  <input type="submit" value="Edit"/>
+</form>
+
+
+
