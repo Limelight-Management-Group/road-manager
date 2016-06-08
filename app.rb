@@ -12,15 +12,32 @@ class Road_manager < Sinatra::Base
 
     # GET "/venues" - Gets all the venues I have
     get "/venues" do
-
        @venues = Venue.all
+       @venuejson = Array.new
+
+       @venues.each do |venue|
+
+        @venuejson << {
+          name: venue.name,
+          location: venue.location,
+          coordinates: [venue.longitude, venue.latitude],
+          genre: venue.genre
+
+        }
+
+       end
+       respond_to do |format|
+        format.json {render json: @venuejson}
+       end
+
        erb :'venues'
+
     end
 
     # POST "/venues" - Create a new venue, and adds it to my list
     post "/venues" do
-      venue = Venue.create(params)
-      redirect to '/venues/#{venue.id}'
+      @venue = Venue.create(params)
+      redirect to '/venues/' + @venue.id.to_s
     end
 
     get "/venues/new" do
@@ -32,38 +49,54 @@ class Road_manager < Sinatra::Base
      get "/venues/:id" do
         @venue = Venue.find(params[:id])
 
+        erb :'show'
     end
 
     # EDIT - like NEW, this just gives us a form that will PUT/PATCH our changes
     # GET "/venues/3" - Just get the information associated with book 3
 
     get "/venues/:id/edit" do
-        # some code will go here
+        @venue = Venue.find(params[:id])
+        erb :'Edit'
     end
 
     # UPDATE - like CREATE, this does the actual updating
     # PUT "/venues/3" - Updates a specific book (book id = 3)
     put "/venues/:id" do
-        # some code will go here
+         @venue = Venue.find(params[:id])
+      if @venue.update_attributes(params[:venue])
+        puts @venue
+        redirect("/venues")
+      else
+        erb :'Edit'
+      end
     end
 
     # UPDATE - believe it or not, PUT & PATCH are often the same code, so many developers skip PATCH and just use PUT
     # PATCH "/venues/3" - Partially updates a specific book (book id = 3)
     patch "/venues/:id" do
-        # some code will go here
+         @venue = Venue.find(params[:id])
+         puts "qkwlekqwjbekjwqb"
     end
 
     # DESTROY - totally nukes a book from the database
     # DELETE "/venues/3" - Deletes a specific book (book id = 3)
-    post "/venues/:id" do |id|
-          @venues = Venues.find_by_id(params[:id])
-          @venues.delete
-          redirect to '/venues'
+    delete "/venues/:id" do
+           @venue = Venue.find(params[:id])
+           @venue.destroy
+           redirect "/venues"
+
     end
+
+def new
+   @registration = Venque.new
+   @course = Course.find_by id: params["_id"]
 end
 
 
+end
 __END__
+
 @@layout
 
 

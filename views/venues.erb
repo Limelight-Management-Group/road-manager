@@ -1,13 +1,3 @@
 
+<div id="map"></div>
 
-
-<ul>
-<% @venues.each do | venue | %>
-  <li>
-    <p><strong>"<%= venue.name %>",
-    offers<%= venue.venue_name %></strong>,
-    <%= venue.genre %> genres,
-    located at<%= venue.location %></p>
-  </li>
-<% end %>
-</ul>

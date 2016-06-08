@@ -7,36 +7,72 @@
 
       <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- VENDOR SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="scripts/app.js"></script>
+    <script src="/scripts/app.js"></script>
   </head>
   <body>
-    <div class="jumbotron">
+    <div class="container-fluid">
 
-    <nav>
-      <ul>
-        <li><a href="" title="edit">edit</a></li>
-        <li><a href="" title="delete">delete</a></li>
-        <li><a href="" title="all">all venues</a></li>
-      </ul>
-    </nav>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Road Manager</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/venues">About</a></li>
+                <li><a href="/venues/show">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+    <div>
+      <%= yield %>
+    </div>
 
 
-    <h1>Road Manager</h1>
-    <h2>Take Your Show On The Road!</h2>
+    <h1 class="title">Road Manager</h1>
+    <h2 class="subtitle">Take Your Show On The Road!</h2>
     <img src="/images/goldshadesapollo.jpg">
-    <%= yield %>
+
 
     </div>
 
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_2M24QUCIlczgv88L1AR020CYHwZ8Bhc&callback=initMap"
+    async defer>
 
+    </script>
   </body>
 </html>
-

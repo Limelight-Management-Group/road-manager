@@ -2,12 +2,13 @@
 
 <ul>
 <% @venues.each do | venue | %>
+  <a href="/venues/<%= venue.id %>">
   <li>
     <p><strong>"<%= venue.name %>",
     by <%= venue.venue_name %></strong>,
     <%= venue.genre %>,
     <%= venue.location %></p>
-  </li>
+  </li></a>
 <% end %>
 </ul>
 

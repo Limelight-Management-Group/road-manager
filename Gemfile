@@ -11,4 +11,6 @@ gem 'boostrap-sass'
 gem "pg"
 gem "session"
 gem "bootstrap"
+gem "geocoder"
+
 

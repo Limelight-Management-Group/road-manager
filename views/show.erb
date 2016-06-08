@@ -16,11 +16,8 @@
   <input type="submit" value="Delete"/>
 </form>
 
+<button type="submit"><a href="/venues/<%= @venue.id %>/edit">edit</a></button>
 
-<form action="/venues/<%= @venue.id %>" method="get">
-  <input type="hidden" name="_method" value="get"/>
-  <input type="submit" value="Edit"/>
-</form>
 
 
 
