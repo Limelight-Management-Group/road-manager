@@ -1,9 +1,7 @@
 require 'rubygems'
 require 'bundler'
-# require 'pry'
-require 'geocoder'
-require "geocoder/railtie"
-Geocoder::Railtie.insert
+require 'pry'
+
 
 Bundler.require
 
@@ -14,4 +12,4 @@ require './app'
 use Rack::MethodOverride
 
 run Road_manager
-
+#

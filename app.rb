@@ -4,35 +4,36 @@ class Road_manager < Sinatra::Base
     # GET "/" - This is the root route
     get "/" do
       @venues = Venue.all
-      p "All venues"
-      p @venues
-      p "****"
       erb :index
     end
 
     # GET "/venues" - Gets all the venues I have
     get "/venues" do
        @venues = Venue.all
-       @venuejson = Array.new
+       p 'TYPEOFREQUEST: ' + request.xhr?.to_s
+       if request.xhr?
 
-       @venues.each do |venue|
+        venuejson = Array.new
 
-        @venuejson << {
-          name: venue.name,
-          location: venue.location,
-          coordinates: [venue.longitude, venue.latitude],
-          genre: venue.genre
+        @venues.each do |venue|
 
-        }
+          venuejson << {
+            name: venue.name,
+            location: venue.location,
+            coordinates: [venue.longitude, venue.latitude],
+            genre: venue.genre
+
+          }
+
+         end
+            venuejson.to_json
+       else
+
+        erb :'venues'
 
        end
-       respond_to do |format|
-        format.json {render json: @venuejson}
-       end
-
-       erb :'venues'
-
     end
+
 
     # POST "/venues" - Create a new venue, and adds it to my list
     post "/venues" do
@@ -89,7 +90,7 @@ class Road_manager < Sinatra::Base
     end
 
 def new
-   @registration = Venque.new
+   @registration = Venue.new
    @course = Course.find_by id: params["_id"]
 end
 
