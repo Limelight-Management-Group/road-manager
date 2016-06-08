@@ -1,22 +1,23 @@
 console.log('clicked')
 
-window.onload = initMap;
 
 var map;
-function initMap() {
+
+
+function initMap(data) {
+  for (var i = 0; i < data.length; i++) {
+        var myLatLng = {lat: data[0].latitude, lng: data[0].longitude}
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 12
+          center: myLatLng,
+          zoom: 16
         });
-        $.ajax({
-          type: 'GET',
-          url: '/venues',
-          dataType: 'json',
-          success: function(venues) {
-            console.log(venues);
-          }
 
-        })
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+marker.setMap(map);
       }
-
+};
 

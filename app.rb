@@ -10,28 +10,11 @@ class Road_manager < Sinatra::Base
     # GET "/venues" - Gets all the venues I have
     get "/venues" do
        @venues = Venue.all
-       p 'TYPEOFREQUEST: ' + request.xhr?.to_s
-       if request.xhr?
 
-        venuejson = Array.new
-
-        @venues.each do |venue|
-
-          venuejson << {
-            name: venue.name,
-            location: venue.location,
-            coordinates: [venue.longitude, venue.latitude],
-            genre: venue.genre
-
-          }
-
-         end
-            venuejson.to_json
-       else
 
         erb :'venues'
 
-       end
+
     end
 
 

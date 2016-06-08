@@ -1,3 +1,10 @@
 
 <div id="map"></div>
 
+<script type="text/javascript">
+
+  var data = <%= @venues.to_json %>
+  console.log(data)
+  initMap(data)
+
+</script>
