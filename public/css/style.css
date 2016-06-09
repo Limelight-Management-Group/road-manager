@@ -5,13 +5,13 @@ html, body {
 }
 
 #map {
-  padding-top: 10px;
+  padding-top: 5px;
   margin: 20px;
   margin-left: 210px;
   margin-right: 40px;
   width: 70%;
   height: 300px;
-  border-radius: 10px;
+  border-radius: 5px;
 
 
 }
@@ -22,7 +22,7 @@ nav {
 
 img {
   margin-top: 20px;
-  margin-left: 213px;
+  margin-left: 263px;
   width: 840px;
   height: 320px;
   border-radius: 90px;
@@ -32,10 +32,25 @@ img {
   margin-left: 500px;
 }
 .subtitle {
-  margin-left: 220px;
+  margin-left: 285px;
 }
 
 li {
   list-style-type: none;
 }
 
+#indexContent {
+  max-width: 800px;
+  margin-left: 270px;
+  background-color:#f4f4f4;
+  border-radius: 5px;
+}
+
+#centeredText {
+  margin-left: 50px;
+}
+
+#venueLinks {
+  max-width: 700px;
+  padding-bottom: 40px;
+}
