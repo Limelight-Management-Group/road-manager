@@ -11,28 +11,29 @@ html, body {
   margin-right: 40px;
   width: 70%;
   height: 300px;
-  border-radius: 5px;
+  border-radius: 10px;
 
 
 }
 
 nav {
-  margin-left: -110px;
+  margin-left: -520px;
+  width: 200%;
 }
 
-img {
+#mainImg {
   margin-top: 20px;
-  margin-left: 263px;
+  margin-left: 363px;
   width: 840px;
   height: 320px;
   border-radius: 90px;
 }
 
 .title {
-  margin-left: 500px;
+  margin-left: 380px;
 }
 .subtitle {
-  margin-left: 285px;
+  margin-left: 365px;
 }
 
 li {

@@ -1,14 +1,14 @@
 
 <h2>
-<%= @venue.name %>
-<%= @venue.venue_name %>
-<%= @venue.location %>
-<%= @venue.days_available %>
-<%= @venue.age_restriction %>
-<%= @venue.genre %>
-<%= @venue.registration_required %>
-<%= @venue.website %>
-<%= @venue.special_instructions %>
+Venue name: <%= @venue.name %><br>
+Event title: <%= @venue.venue_name %><br>
+Address: <%= @venue.location %><br>
+Days venue is avalable: <%= @venue.days_available %><br>
+Is there an age restriction?: <%= @venue.age_restriction %><br>
+What genres: <%= @venue.genre %><br>
+Is registration required?: <%= @venue.registration_required %><br>
+Website: <%= @venue.website %><br>
+Any Special instructions: <%= @venue.special_instructions %>
 </h2>
 
 
@@ -19,6 +19,22 @@
 
 <button type="submit"><a href="/venues/<%= @venue.id %>/edit">edit</a></button>
 
+
+
+<div id="map" style="height:400px">
+  <script>
+
+  var data = <%= @venue.to_json %>
+  console.log(data,"data length"+data.length)
+  initMap(data)
+        // map = new google.maps.Map(document.getElementById('map'), {
+        //   center: {lat: data2.latitude, lng: data2.longitude},
+        //   zoom: 8
+        // });
+
+
+  </script>
+</div>
 
 
 

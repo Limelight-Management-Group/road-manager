@@ -35,27 +35,36 @@
       </div>
     </div>
 
-    <!-- Textarea -->
+   <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="days_available">Days Available</label>
+            <div class="col-md-4">
+            <input id="Location" name="days_available" value="<%= @venue.days_available%>" type="text" placeholder="Every Wednesday, Friday etc." class="form-control input-md">
+
+            </div>
+          </div>
+
+    <!-- input -->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="age_restriction">Age Restriction</label>
+      <label class="col-md-4 control-label" for="age_restriction">Age Restriction(check for yes)</label>
       <div class="col-md-4">
         <input id="age_restriction" name="venue[age_restriction]" type="checkbox" value="<%= @venue.age_restriction%>" class="form-control input-md">
       </div>
     </div>
 
-    <!-- Textarea -->
+    <!-- input -->
     <div class="form-group">
       <label class="col-md-4 control-label" for="genre">Genres (separated by commas)</label>
       <div class="col-md-4">
-        <textarea class="form-control" id="genre" name="venue[genre]">rock, pop</textarea>
+        <input class="form-control" id="genre" name="venue[genre]" value="<%= @venue.genre %>" placeholder="rock, pop, All"></input>
       </div>
     </div>
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="registration_required">Registration Required</label>
+      <label class="col-md-4 control-label" for="registration_required">Registration Required(check for yes)</label>
       <div class="col-md-4">
-      <input id="registration_required" name="venue[registration_required]" type="checkbox" placeholder="enter true or false" class="form-control input-md">
+      <input id="registration_required" name="venue[registration_required]" value="<%= @venue.registration_required %>" type="checkbox" placeholder="enter true or false" class="form-control input-md">
 
       </div>
     </div>
@@ -64,22 +73,22 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="website">Website</label>
       <div class="col-md-4">
-      <input id="website" name="venue[website]" type="text" placeholder="" class="form-control input-md">
+      <input id="website" name="venue[website]" type="text" placeholder="" value="<%= @venue.website %>" class="form-control input-md">
 
       </div>
     </div>
 
-    <!-- Textarea -->
+    <!-- input -->
     <div class="form-group">
       <label class="col-md-4 control-label" for="special_instructions">Special Instructions</label>
       <div class="col-md-4">
-        <textarea class="form-control" id="special_instructions" name="venue[special_instructions]">How do artists get set up?(what is the age restriction/contact person?)</textarea>
+        <input class="form-control" id="special_instructions" name="venue[special_instructions]" value="<%= @venue.special_instructions %>" placeholder="How do artists get set up?(what is the age restriction/contact person?)"></input>
       </div>
     </div>
 
     <!-- Button -->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="singlebutton">Save Venue</label>
+      <label class="col-md-4 control-label" type="hidden" for="singlebutton">Update Venue</label>
       <div class="col-md-4">
         <form action=<%= "/venues/#{@venue.id}/edit" %> method="GET  ">
           <input type="hidden" name="_method" value="PUT"/>

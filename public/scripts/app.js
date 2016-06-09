@@ -5,31 +5,56 @@ var map;
 
 
 function initMap(data) {
-  for (var i = 0; i < data.length; i++) {
-        var myLatLng = {lat: data[i].latitude, lng: data[i].longitude}
+  if (!data.length) {
+
+        var myLatLng = {lat: data.latitude, lng: data.longitude}
         map = new google.maps.Map(document.getElementById('map'), {
           center: myLatLng,
-          zoom: 10
+          zoom: 45
         });
-
-        // var marker = new google.maps.Marker({
-        //   position: myLatLng,
-        //   map: map,
-        //   title: 'Hello World!'
-        // });
-        setMarkers(map);
+         setMarker(data);
       }
+      else{
+        console.log("multiple points")
+        var newpoint = data
+        console.log("lat of first is:"+data[0])
+        var myLatLng = {lat: newpoint[0].latitude, lng: newpoint[0].longitude}
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          zoom: 21
+        });
+        setMarkers(data);
+      }
+
+
+
+
 }
 
-function setMarkers(map) {
-  for (var i = 0; i < data.length; i++) {
-    var venueMark = data[i];
+function setMarkers(datas) {
+  console.log("doing setMarkerS")
+  var bounds = new google.maps.LatLngBounds();
+  for (var i = 0; i < datas.length; i++) {
     var marker = new google.maps.Marker({
-      position: {lat: venueMark.latitude, lng: venueMark.longitude},
+      position: {lat: datas[i].latitude, lng: datas[i].longitude},
       map: map,
-      title: data.name,
-      venueName: data.venueName
+      title: datas[i].name,
+      venueName: datas[i].venueName
     });
-  }
-}
 
+      bounds.extend(marker.position);
+    }
+      map.fitBounds(bounds);
+ }
+
+
+function setMarker(data) {
+       var newpoint = data
+          var marker = new google.maps.Marker({
+            position: {lat: newpoint.latitude, lng: newpoint.longitude},
+            map: map,
+            title: newpoint.name,
+            venueName: newpoint.venueName
+          });
+
+        };

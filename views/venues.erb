@@ -3,8 +3,8 @@
 
 <script type="text/javascript">
 
-  var data = <%= @venues.to_json %>
-  console.log(data)
-  initMap(data)
+  var datas = <%= @venues.to_json %>
+  console.log(datas+"from venues")
+  initMap(datas)
 
 </script>
