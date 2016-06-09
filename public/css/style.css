@@ -5,8 +5,14 @@ html, body {
 }
 
 #map {
-  width: 100%;
-  height: 400px;
+  padding-top: 10px;
+  margin: 20px;
+  margin-left: 210px;
+  margin-right: 40px;
+  width: 70%;
+  height: 300px;
+  border-radius: 10px;
+
 
 }
 
@@ -15,18 +21,21 @@ nav {
 }
 
 img {
-  margin-left: 43px;
-  width: 50%;
-  /*height: 600px;*/
+  margin-top: 20px;
+  margin-left: 213px;
+  width: 840px;
+  height: 320px;
+  border-radius: 90px;
 }
 
 .title {
   margin-left: 500px;
 }
 .subtitle {
-  margin-left: 50px;
+  margin-left: 220px;
 }
 
 li {
   list-style-type: none;
 }
+
