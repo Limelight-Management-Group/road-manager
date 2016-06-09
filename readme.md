@@ -13,4 +13,4 @@ To contribute to this, you may want to use the Sinatra requirements and gem, boo
 ##Unsolved Problems
 I am still working on making each map marker clickable, so that it will link to a showpage with more information. I would also like to create profiles for login purposes; users shouldn't be able to delete another user's venue or update their information, without prior authorization.
 
-Much more is on the way. Visit: [The Limelight] "http://videos.tllis.net", to find out more!
+Much more is on the way. Visit: [The Limelight] (http://videos.tllis.net), to find out more!
