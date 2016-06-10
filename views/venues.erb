@@ -4,7 +4,21 @@
 <script type="text/javascript">
 
   var datas = <%= @venues.to_json %>
-  console.log(datas+"from venues")
+  console.log(datas,"from venues")
   initMap(datas)
 
 </script>
+<hr>
+<div id="venueLinks">
+<ul>
+<% @venues.each do | venue | %>
+  <a href="/venues/<%= venue.id %>">
+  <li class="limeLinks">
+    Venue name: <strong><%= venue.name %>,</strong>
+    Name of event: <strong><%= venue.venue_name %>,</strong>
+    What genre: <strong><%= venue.genre %>,</strong>
+    Location: <strong><%= venue.location %></strong>
+  </li></a>
+<% end %>
+</ul>
+<div>
