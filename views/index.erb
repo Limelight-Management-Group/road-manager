@@ -1,27 +1,23 @@
-<div class="vignette">
-<div id="indexContent">
-<br><br>
-  <b><h4><p class="centeredText"><strong>Here at The Limelight, our number one mission is artist development. Our goal is to continually create more opportunities for artists to build thier careers with our platform...</strong></p></h4></b>
-  <h3><p class="centeredText2"><em>Road Manager</em></p></h3>
-  <h4><p class="centeredText"> is for anyone who loves to either perform or experience raw talent LIVE!</p></h4>
-  <p class="centeredText">Simply search through our Database --below-- and select one of our growing list of venues, or create your own events. <br>Build your fanbase and connect with artists local and in other locations. Start now, and take your show on the road.</p>
 
-</div>
+<div id="indexContent">
+  <b><h4><p>Here at The Limelight, our number one mission is artists development. Our goal is to continually create more opportunities for artist to build thier careers with our platform.</p></h4></b>
+  <h4><p id="centeredText"><em>Road manager is for anyone who loves to either perform or experience raw talent LIVE!</em></p></h4>
+  <p>Simply search through our Database --below-- and select one of our growing list of venues, or create your own events. <br>Build your fanbase and connect with artists local and in other locations. Start now, and take your show on the road.</p>
+
 </div>
  <hr>
 <div id="venueLinks">
 <ul>
 <% @venues.each do | venue | %>
   <a href="/venues/<%= venue.id %>">
-  <li class="limeLinks">
-    Venue name: <strong><%= venue.name %>,</strong>
-    Name of event: <strong><%= venue.venue_name %>,</strong>
-    What genre: <strong><%= venue.genre %>,</strong>
-    Location: <strong><%= venue.location %></strong>
+  <li>
+    <p><strong>"<%= venue.name %>",
+    by <%= venue.venue_name %></strong>,
+    <%= venue.genre %>,
+    <%= venue.location %></p>
   </li></a>
 <% end %>
 </ul>
 <div>
-
 
 

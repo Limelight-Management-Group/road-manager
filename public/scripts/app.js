@@ -31,60 +31,30 @@ function initMap(data) {
 
 }
 
-var infoWindow = null;
-function setMarkers(data) {
+function setMarkers(datas) {
   console.log("doing setMarkerS")
-  infoWindow = new google.maps.InfoWindow({
-      content: "holding..."
-  })
   var bounds = new google.maps.LatLngBounds();
-
-  for (var i = 0; i < data.length; i++) {
+  for (var i = 0; i < datas.length; i++) {
     var marker = new google.maps.Marker({
-      position: {lat: data[i].latitude, lng: data[i].longitude},
+      position: {lat: datas[i].latitude, lng: datas[i].longitude},
       map: map,
-      name: data[i].name,
-      venue_name: data[i].venue_name,
-      website: data[i].website,
-      location: data[i].location
+      title: datas[i].name,
+      venueName: datas[i].venueName
     });
 
-
-
-
-    // content:
-    google.maps.event.addListener(marker, 'click', function(){
-        infoWindow.setContent('<strong> Name: </strong>' + this.name + '<br>' + '<strong> Venue Name: </strong>' + this.venue_name + '<br>' + '<strong> Location: </strong>' + this.location + '<br>' + '<strong> Website: </strong>' + this.website)
-        infoWindow.open(map, this);
-    })
-
-    bounds.extend(marker.position);
-  }
-    map.fitBounds(bounds);
+      bounds.extend(marker.position);
+    }
+      map.fitBounds(bounds);
  }
 
 
 function setMarker(data) {
-       var newpoint = data;
+       var newpoint = data
           var marker = new google.maps.Marker({
             position: {lat: newpoint.latitude, lng: newpoint.longitude},
             map: map,
             title: newpoint.name,
             venueName: newpoint.venueName
-          })
-
-      var infoWindow = new google.maps.InfoWindow({
-        content: '<strong> Name: </strong>' + data.name + '<br>' + '<strong> Venue Name: </strong>' + data.venue_name + '<br>' + '<strong> Location: </strong>' + data.location + '<br>' + '<strong> Website: </strong>' + data.website
-      })
-
-      google.maps.event.addListener(marker, 'click', function(){
-          infoWindow.open(map, this)
-      })
-
+          });
 
         };
-
-
-
-
-
