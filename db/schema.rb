@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608020555) do
+ActiveRecord::Schema.define(version: 20160610081454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20160608020555) do
     t.string   "name"
     t.text     "venue_name"
     t.text     "location"
-    t.text     "days_available"
     t.boolean  "age_restriction"
     t.text     "genre"
     t.boolean  "registration_required"

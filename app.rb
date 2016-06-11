@@ -82,18 +82,3 @@ end
 __END__
 
 @@layout
-
-
-
-
-  # POST "/venues" - Create a new book, add it to our list
-
-  # GET "/venues/3" - Just get the information associated one specific book (that already exists, book id = 3)
-
-  # PUT "/venues/3" - Updates a specific book (book id = 3)
-
-  # PATCH "/venues/3" - Partially updates a specific book (book id = 3)
-
-  # DELETE "/venues/3" - Deletes a specific book (book id = 3)
-
-
