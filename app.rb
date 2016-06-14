@@ -30,7 +30,7 @@ class Road_manager < Sinatra::Base
 
     end
 
-     get "/venues/:id" do
+    get "/venues/:id" do
         @venue = Venue.find(params[:id])
 
         erb :'show'
@@ -41,7 +41,7 @@ class Road_manager < Sinatra::Base
 
     get "/venues/:id/edit" do
         @venue = Venue.find(params[:id])
-        erb :'Edit'
+        erb :'edit'
     end
 
     # UPDATE - like CREATE, this does the actual updating
@@ -52,33 +52,33 @@ class Road_manager < Sinatra::Base
         puts @venue
         redirect("/venues")
       else
-        erb :'Edit'
+        erb :'edit'
       end
     end
 
     # UPDATE - believe it or not, PUT & PATCH are often the same code, so many developers skip PATCH and just use PUT
     # PATCH "/venues/3" - Partially updates a specific book (book id = 3)
     patch "/venues/:id" do
-         @venue = Venue.find(params[:id])
-         puts "qkwlekqwjbekjwqb"
+       @venue = Venue.find(params[:id])
+       puts "qkwlekqwjbekjwqb"
     end
 
     # DESTROY - totally nukes a book from the database
     # DELETE "/venues/3" - Deletes a specific book (book id = 3)
     delete "/venues/:id" do
-           @venue = Venue.find(params[:id])
-           @venue.destroy
-           redirect "/venues"
+       @venue = Venue.find(params[:id])
+       @venue.destroy
+       redirect "/venues"
 
     end
 
-def new
-   @registration = Venue.new
-   @course = Course.find_by id: params["_id"]
-end
+    def new
+       @registration = Venue.new
+       @course = Course.find_by id: params["_id"]
+    end
 
 
-end
+    end
 __END__
 
 @@layout
